@@ -60,13 +60,13 @@ f = open("data/UTK-Face/age/train.json","w")
 l = []
 
 for i in range(train_youth_num):
-    d = {'img':train_youth[i], 'label':'youth'}
+    d = {'img':train_youth[i], 'label':'0'}
     l.append(d)
 for i in range(train_adult_num):
-    d = {'img':train_adult[i], 'label':'adult'}
+    d = {'img':train_adult[i], 'label':'1'}
     l.append(d)
 for i in range(train_elder_num):
-    d = {'img':train_elder[i], 'label':'elder'}
+    d = {'img':train_elder[i], 'label':'2'}
     l.append(d)
     
 json.dump(l,f,indent='\t',cls=NpEncoder)
@@ -76,13 +76,13 @@ f = open("data/UTK-Face/age/val.json","w")
 l = []
 
 for i in range(val_youth_num):
-    d = {'img':val_youth[i], 'label':'youth'}
+    d = {'img':val_youth[i], 'label':'0'}
     l.append(d)
 for i in range(val_adult_num):
-    d = {'img':val_adult[i], 'label':'adult'}
+    d = {'img':val_adult[i], 'label':'1'}
     l.append(d)
 for i in range(val_elder_num):
-    d = {'img':val_elder[i], 'label':'elder'}
+    d = {'img':val_elder[i], 'label':'2'}
     l.append(d)
 
 json.dump(l,f,indent='\t',cls=NpEncoder)
