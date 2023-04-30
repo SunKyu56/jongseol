@@ -51,14 +51,16 @@ for j in range(val_female_num):
 print(len(male) + len(female))
 print(len(train_female) + len(train_male) + len(val_female) + len(val_male))
 
+final_path ="data/UTK-Face/imgs/"
+
 f = open("data/UTK-Face/gender/train.json", "w")
 l = []
 
 for i in range(train_male_num):
-    d = {'img':train_male[i], 'label':'0'}
+    d = {'img':final_path + train_male[i], 'label':'0'}
     l.append(d)
 for i in range(train_female_num):
-    d = {'img':train_female[i], 'label':'1'}
+    d = {'img':final_path + train_female[i], 'label':'1'}
     l.append(d)
 
 json.dump(l,f,indent='\t',cls=NpEncoder)
@@ -68,10 +70,10 @@ f = open("data/UTK-Face/gender/val.json", "w")
 l = []
 
 for i in range(val_male_num):
-    d = {'img':val_male[i], 'label':'0'}
+    d = {'img':final_path + val_male[i], 'label':'0'}
     l.append(d)
 for i in range(val_female_num):
-    d = {'img':val_female[i], 'label':'1'}
+    d = {'img':final_path + val_female[i], 'label':'1'}
     l.append(d)
 
 json.dump(l,f,indent='\t',cls=NpEncoder)
